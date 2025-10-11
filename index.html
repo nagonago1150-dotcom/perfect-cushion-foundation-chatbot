@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuzLim - ニオイ・ムレ・不快感にアプローチする、新発想フェムケア</title>
+    <!-- Updated for Vercel deployment -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress-bar"></div>
+
+    <!-- Sticky CTA Button -->
+    <div id="sticky-cta" class="sticky-cta-hidden">
+        <button class="sticky-cta-button" onclick="document.querySelector('.cta-section').scrollIntoView({behavior: 'smooth'})">
+            特別価格で始める
+        </button>
+    </div>
+
+    <!-- Water Effects Background -->
+    <div class="water-effects-container">
+        <div class="water-ripples">
+            <div class="ripple ripple-1"></div>
+            <div class="ripple ripple-2"></div>
+            <div class="ripple ripple-3"></div>
+            <div class="ripple ripple-4"></div>
+            <div class="ripple ripple-5"></div>
+            <div class="ripple ripple-6"></div>
+        </div>
+        <div class="water-droplets">
+            <div class="droplet droplet-1"></div>
+            <div class="droplet droplet-2"></div>
+            <div class="droplet droplet-3"></div>
+            <div class="droplet droplet-4"></div>
+            <div class="droplet droplet-5"></div>
+            <div class="droplet droplet-6"></div>
+            <div class="droplet droplet-7"></div>
+            <div class="droplet droplet-8"></div>
+        </div>
+        <div class="moisture-overlay"></div>
+    </div>
+    
+    <!-- Bubble Effects Background -->
+    <div class="bubble-effects-container">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+        <div class="bubble bubble-7"></div>
+        <div class="bubble bubble-8"></div>
+        <div class="bubble bubble-9"></div>
+        <div class="bubble bubble-10"></div>
+        <div class="bubble bubble-11"></div>
+        <div class="bubble bubble-12"></div>
+        <div class="bubble bubble-13"></div>
+        <div class="bubble bubble-14"></div>
+        <div class="bubble bubble-15"></div>
+    </div>
+    
+    <div class="pr-notice" style="background: rgba(240, 240, 240, 0.3); padding: 4px 0; text-align: center; border-bottom: 1px solid rgba(200, 200, 200, 0.1); font-size: 11px; font-weight: 300; color: rgba(100, 100, 100, 0.4); font-family: 'Inter', sans-serif; letter-spacing: 0.2px; opacity: 0.5;">
+        PR：Salus（株）
+    </div>
+    <header class="hero-header">
+        <div class="botanical-background">
+            <div class="botanical-pattern"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="brand-section">
+                <div class="botanical-frame">
+                    <h1>LuzLim</h1>
+                    <p class="subtitle">ニオイ・ムレ・不快感に<br class="br-mobile">アプローチする、<br>新発想フェムケア</p>
+                    <div class="hero-image-section">
+                        <div class="combined-promo-images">
+                            <div class="luzlim-top-section">
+                                <div class="luzlim-features-display">
+                                    <div class="feature-badge-large">抗菌・消臭の<br class="br-mobile">W処方</div>
+                                    <div class="feature-badge-large">累計18万人の<br class="br-mobile">実績から誕生</div>
+                                    <div class="feature-badge-large">洗い流しても、<br class="br-mobile">続く上質な香り</div>
+                                </div>
+                            </div>
+                            <div class="luzlim-subscription-section">
+                                <img src="luzlim-subscription-offer.png" alt="LuzLim定期便 特別価格1,980円" class="subscription-offer-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-cta-section">
+                        <button class="hero-consultation-btn" id="hero-consultation-trigger">まずは相談してみる</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>もっと自信あふれる<br class="br-mobile">毎日を<br class="br-mobile">LuzLimと一緒に</h2>
+                <p>ニオイ、ムレ、生理中の不快感など、<br class="br-mobile">デリケートな悩みにアプローチ</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h3>LuzLimを支える<br class="br-mobile">3つのこだわり</h3>
+                <div class="feature-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="w-formula">
+                            W処方
+                        </button>
+                        <button class="tab-button" data-tab="active-ingredient">
+                            有効成分
+                        </button>
+                        <button class="tab-button" data-tab="fragrance">
+                            上質な香り
+                        </button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="w-formula">
+                            <div class="feature-detail">
+                                <div class="feature-info">
+                                    <h4>抗菌と消臭の「W処方」</h4>
+                                    <div class="benefit-list">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>ニオイの原因菌を根本からブロック</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>気になるニオイをしっかり消臭</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>デリケートゾーンを清潔な状態に保つ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="active-ingredient">
+                            <div class="feature-detail">
+                                <div class="feature-info">
+                                    <h4>有効成分 o-シメン-5-オール</h4>
+                                    <div class="benefit-list">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>医薬部外品にも使われる殺菌成分</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>菌の繁殖を抑え、ニオイの発生を防ぐ</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>肌にやさしく、しっかりアプローチ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-panel" id="fragrance">
+                            <div class="feature-detail">
+                                <div class="feature-info">
+                                    <h4>洗い流しても続く「上質な香り」</h4>
+                                    <div class="benefit-list">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>まるで香水のような<br class="br-mobile">贅沢なフレグランス設計</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>不快なニオイをマスキングし、<br class="br-mobile">心地よい香りが持続</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>使うたびに、<br class="br-mobile">気分も女性らしさもアップ</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <div class="container">
+                <h3>LuzLimで変わる、<br class="br-mobile">新しい毎日</h3>
+                <div class="benefits-container">
+                    <div class="main-benefit">
+                        <div class="benefit-visual">
+                            <div class="concern-illustration">
+                                <div class="concern-icon">
+                                    <img src="concern-image-final.png" alt="デリケートゾーンのお悩み" class="concern-image">
+                                </div>
+                                <h4>こんなお悩みありませんか？</h4>
+                                <div class="concern-list">
+                                    <div class="concern-item">
+                                        <span class="concern-dot"></span>
+                                        <span>デリケートゾーンのニオイが気になる</span>
+                                    </div>
+                                    <div class="concern-item">
+                                        <span class="concern-dot"></span>
+                                        <span>生理中のムレや不快感がつらい</span>
+                                    </div>
+                                    <div class="concern-item">
+                                        <span class="concern-dot"></span>
+                                        <span>かゆみや乾燥を繰り返す</span>
+                                    </div>
+                                    <div class="concern-item">
+                                        <span class="concern-dot"></span>
+                                        <span>ボディソープだと、しみて痛い</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="arrow-container">
+                                <div class="transform-arrow">
+                                    <svg width="60" height="40" viewBox="0 0 60 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 20H50M50 20L35 5M50 20L35 35" stroke="#DAA520" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="kalcala-badge">
+                                    <span>LuzLim</span>
+                                    <small>抗菌・消臭のW処方</small>
+                                </div>
+                            </div>
+                            
+                            <div class="solution-illustration">
+                                <div class="solution-icon">
+                                    <img src="luzlim-compact-bottle.png" alt="LuzLim - コンパクトボトル" class="solution-image">
+                                </div>
+                                <h4>LuzLimで解決！</h4>
+                                <div class="solution-list">
+                                    <div class="solution-item">
+                                        <span class="solution-check">✓</span>
+                                        <span>ニオイの原因菌からブロック</span>
+                                    </div>
+                                    <div class="solution-item">
+                                        <span class="solution-check">✓</span>
+                                        <span>不快な時期も、すっきり清潔に</span>
+                                    </div>
+                                    <div class="solution-item">
+                                        <span class="solution-check">✓</span>
+                                        <span>うるおいを守り、健やかな状態へ</span>
+                                    </div>
+                                    <div class="solution-item">
+                                        <span class="solution-check">✓</span>
+                                        <span>肌にやさしい濃密泡でケア</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scientific-evidence">
+                        <h4><span class="count-up" data-count="180000">0</span>人の実績から生まれた信頼性</h4>
+                        <div class="evidence-grid">
+                            <div class="evidence-item">
+                                <div class="evidence-number">★★★★★</div>
+                                <div class="evidence-label">レビュー</div>
+                                <div class="evidence-description">高評価続出</div>
+                            </div>
+                            <div class="evidence-item">
+                                <div class="evidence-number">「安心」</div>
+                                <div class="evidence-label">利用者の声</div>
+                                <div class="evidence-description">「夕方までニオイが気にならない」</div>
+                            </div>
+                        </div>
+                        <p class="evidence-note">※利用者アンケート結果<br class="br-mobile">※個人の感想であり、<br class="br-mobile">効果を保証するものではありません</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h3>特別価格</h3>
+                <div class="price">
+                    <div class="price-header">
+                        <div class="regular-price">通常価格 <span class="strike-through">4,950円</span></div>
+                        <div class="discount-badge">初回限定40%OFF + 1000円OFF</div>
+                    </div>
+                    <div class="price-main-container">
+                        <span class="price-main">1,980円</span>
+                        <span class="price-sub">税込</span>
+                    </div>
+                    <div class="price-guarantee">
+                        <span class="guarantee-text">定期回数のお約束なし</span>
+                        <span class="guarantee-text">送料無料</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <a href="https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform" class="cta-button primary" target="_blank">今すぐお得に<br class="br-mobile">始める！</a>
+                    <button class="cta-button consultation" id="consultation-trigger">まずは相談<br class="br-mobile">してみる</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="chatbot-container">
+        <div id="chatbot-header">
+            <span>LuzLimお悩み相談チャット</span>
+            <button id="chatbot-close">×</button>
+        </div>
+        <div id="chat-progress-container">
+            <div id="chat-progress-bar"></div>
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-options"></div>
+    </div>
+
+    <div id="chatbot-trigger">💬</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
