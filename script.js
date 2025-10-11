@@ -1,4 +1,4 @@
-class LuzlimChatbot {
+class PerfectOneChatbot {
     constructor() {
         this.chatContainer = document.getElementById('chatbot-container');
         this.chatTrigger = document.getElementById('chatbot-trigger');
@@ -216,16 +216,16 @@ class LuzlimChatbot {
         if (this.messagesContainer.children.length > 0) {
             return;
         }
-        
-        this.addMessage('こんにちは！LuzLimサポートです😊');
-        
+
+        this.addMessage('こんにちは！パーフェクトワン 美容アドバイザーです😊');
+
         setTimeout(() => {
             this.addMessage('どのようなお悩みでお困りですか？');
             setTimeout(() => {
                 this.showOptions([
-                    { id: 'odor', text: 'ニオイ・ムレが気になる' },
-                    { id: 'discomfort', text: '生理中の不快感' },
-                    { id: 'dryness', text: 'かゆみ・乾燥' }
+                    { id: 'coverage', text: 'シミ・毛穴が隠れない' },
+                    { id: 'finish', text: '厚塗り感・ツヤのなさ' },
+                    { id: 'longevity', text: '夕方のメイク崩れ' }
                 ]);
             }, 800);
         }, 1000);
@@ -252,30 +252,30 @@ class LuzlimChatbot {
         this.updateProgress();
 
         switch (choiceId) {
-            case 'odor':
-                this.addMessage('ニオイ・ムレにお悩みなんですね。');
+            case 'coverage':
+                this.addMessage('シミ・毛穴にお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('LuzLimのW処方が原因菌をブロックして、夕まで気にならない清潔な状態を保ちますよ！✨');
+                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションなら、高いカバー力(※)で厚塗り感なく、自然に隠せますよ！✨\n\n※メイクアップ効果による');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
 
-            case 'discomfort':
-                this.addMessage('生理中の不快感にお悩みなんですね。');
+            case 'finish':
+                this.addMessage('仕上がりにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('LuzLimなら濃密な泡でやさしく洗えるので、敏感な時期も快適に過ごせます！👍');
+                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションなら、美容液級のうるおいで、内側から輝くような理想のツヤ肌(※)が手に入ります！👍\n\n※メイクアップ効果による');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
 
-            case 'dryness':
-                this.addMessage('かゆみ・乾燥にお悩みなんですね。');
+            case 'longevity':
+                this.addMessage('メイク崩れにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('LuzLimはうるおいを守りながら洗えるので、乾燥しがちなデリケートゾーンにぴったりです！🌸');
+                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションは肌への密着力が高いので、夕方までキレイな仕上がり(※)が続きます！🌸\n\n※メイクアップ効果による');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
@@ -304,7 +304,7 @@ class LuzlimChatbot {
                 imageContent.className = 'message-content';
                 const img = document.createElement('img');
                 img.src = 'luzlim-chat-promo.png';
-                img.alt = 'LuzLim定期便特別価格1,980円';
+                img.alt = 'パーフェクトワン グロウ＆カバー クッションファンデーション 初回特別価格2,640円';
                 img.style.width = '100%';
                 img.style.borderRadius = '8px';
                 img.style.cursor = 'pointer';
@@ -315,7 +315,7 @@ class LuzlimChatbot {
                 this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
                 
                 setTimeout(() => {
-                    this.addMessage('初回特別価格、1,980円でお試しできます！💰');
+                    this.addMessage('初回特別価格、2,640円でお試しできます！💰');
                     setTimeout(() => {
                         this.showFinalOptions();
                     }, 1200);
@@ -326,35 +326,35 @@ class LuzlimChatbot {
     
     showFinalOptions() {
         this.showOptions([
-            { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true },
+            { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true },
             { id: 'more_info', text: 'もう少し詳しく' },
             { id: 'other_concerns', text: '他の悩みも' }
         ]);
     }
     
     showPriceOffer() {
-        this.addMessage('今なら、初回特別価格1,980円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
-        
+        this.addMessage('今なら、初回特別価格2,640円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
+
         setTimeout(() => {
             this.showOptions([
-                { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true }
+                { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true }
             ]);
         }, 1500);
     }
     
     resetToInitialOptions() {
         this.showOptions([
-            { id: 'odor', text: 'ニオイ・ムレが気になる' },
-            { id: 'discomfort', text: '生理中の不快感' },
-            { id: 'dryness', text: 'かゆみ・乾燥' }
+            { id: 'coverage', text: 'シミ・毛穴が隠れない' },
+            { id: 'finish', text: '厚塗り感・ツヤのなさ' },
+            { id: 'longevity', text: '夕方のメイク崩れ' }
         ]);
     }
     
     handlePurchaseAction() {
         setTimeout(() => {
-            this.addMessage('素晴らしい判断ですね！🎉');
+            this.addMessage('ありがとうございます！🎉');
             setTimeout(() => {
-                this.addMessage('お得な定期コースページにご案内いたします...');
+                this.addMessage('お得なキャンペーンページにご案内いたします...');
                 
                 // 購入ページへのリンクボタンも表示
                 const linkDiv = document.createElement('div');
@@ -423,9 +423,9 @@ class LuzlimChatbot {
         switch (choiceId) {
             case 'more_info':
                 setTimeout(() => {
-                    this.addMessage('LuzLimの詳細をご説明しますね！📋');
+                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションの詳細をご説明しますね！📋');
                     setTimeout(() => {
-                        this.addMessage('✅ 累計18万人の実績から誕生\n✅ 抗菌・消臭のW処方\n✅ 定期回数のお約束なし');
+                        this.addMessage('✅ 9年連続売上日本一※のブランド発\n✅ カバー力と理想のツヤ感を両立(※)\n✅ 定期回数のお約束なし\n\n※パーフェクトワン オールインワン美容液ジェルシリーズとして\n※メイクアップ効果による');
                         setTimeout(() => {
                             this.addMessage('安心してお試しいただけます！');
                             setTimeout(() => {
@@ -435,12 +435,12 @@ class LuzlimChatbot {
                     }, 1000);
                 }, 300);
                 break;
-                
+
             case 'other_concerns':
                 setTimeout(() => {
                     this.addMessage('他にもお悩みがあるのですね😊');
                     setTimeout(() => {
-                        this.addMessage('LuzLimは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
+                        this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
                         setTimeout(() => {
                             this.resetToInitialOptions();
                         }, 1000);
@@ -697,7 +697,7 @@ class InteractiveFeatures {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const chatbot = new LuzlimChatbot();
+    const chatbot = new PerfectOneChatbot();
 
     // パーティクルシステム初期化
     new ParticleSystem();
