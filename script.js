@@ -1,4 +1,4 @@
-class LuzlimChatbot {
+class PerfectOneChatbot {
     constructor() {
         this.chatContainer = document.getElementById('chatbot-container');
         this.chatTrigger = document.getElementById('chatbot-trigger');
@@ -216,16 +216,16 @@ class LuzlimChatbot {
         if (this.messagesContainer.children.length > 0) {
             return;
         }
-        
-        this.addMessage('こんにちは！LuzLimサポートです😊');
-        
+
+        this.addMessage('こんにちは！パーフェクトワン 美容アドバイザーです😊');
+
         setTimeout(() => {
             this.addMessage('どのようなお悩みでお困りですか？');
             setTimeout(() => {
                 this.showOptions([
-                    { id: 'odor', text: 'ニオイ・ムレが気になる' },
-                    { id: 'discomfort', text: '生理中の不快感' },
-                    { id: 'dryness', text: 'かゆみ・乾燥' }
+                    { id: 'coverage', text: 'シミ・毛穴が隠れない' },
+                    { id: 'texture', text: '厚塗り感・ツヤのなさ' },
+                    { id: 'lasting', text: '夕方のメイク崩れ' }
                 ]);
             }, 800);
         }, 1000);
@@ -252,30 +252,30 @@ class LuzlimChatbot {
         this.updateProgress();
 
         switch (choiceId) {
-            case 'odor':
-                this.addMessage('ニオイ・ムレにお悩みなんですね。');
+            case 'coverage':
+                this.addMessage('シミ・毛穴が隠れないお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('LuzLimのW処方が原因菌をブロックして、夕まで気にならない清潔な状態を保ちますよ！✨');
+                    this.addMessage('パーフェクトワンなら高いカバー力で、気になる部分を厚塗り感なく自然に隠せますよ！✨');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
 
-            case 'discomfort':
-                this.addMessage('生理中の不快感にお悩みなんですね。');
+            case 'texture':
+                this.addMessage('厚塗り感・ツヤのなさにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('LuzLimなら濃密な泡でやさしく洗えるので、敏感な時期も快適に過ごせます！👍');
+                    this.addMessage('美容液級のうるおいで、内側から輝くような理想のツヤ肌が手に入ります！👍');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
 
-            case 'dryness':
-                this.addMessage('かゆみ・乾燥にお悩みなんですね。');
+            case 'lasting':
+                this.addMessage('夕方のメイク崩れにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('LuzLimはうるおいを守りながら洗えるので、乾燥しがちなデリケートゾーンにぴったりです！🌸');
+                    this.addMessage('肌への密着力が高いので、夕方までキレイな仕上がりが続きます！🌸');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
@@ -293,7 +293,7 @@ class LuzlimChatbot {
     
     showSpecialOffer() {
         this.addMessage('そんなあなたに朗報です！🎉');
-        
+
         setTimeout(() => {
             this.addMessage('今なら特別キャンペーン中です！');
             setTimeout(() => {
@@ -303,8 +303,8 @@ class LuzlimChatbot {
                 const imageContent = document.createElement('div');
                 imageContent.className = 'message-content';
                 const img = document.createElement('img');
-                img.src = 'luzlim-chat-promo.png';
-                img.alt = 'LuzLim定期便特別価格1,980円';
+                img.src = 'perfectone-chat-promo.png';
+                img.alt = 'パーフェクトワン定期便特別価格2,640円';
                 img.style.width = '100%';
                 img.style.borderRadius = '8px';
                 img.style.cursor = 'pointer';
@@ -313,9 +313,9 @@ class LuzlimChatbot {
                 imageDiv.appendChild(imageContent);
                 this.messagesContainer.appendChild(imageDiv);
                 this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
-                
+
                 setTimeout(() => {
-                    this.addMessage('初回特別価格、1,980円でお試しできます！💰');
+                    this.addMessage('初回特別価格、2,640円でお試しできます！💰');
                     setTimeout(() => {
                         this.showFinalOptions();
                     }, 1200);
@@ -326,27 +326,27 @@ class LuzlimChatbot {
     
     showFinalOptions() {
         this.showOptions([
-            { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true },
+            { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true },
             { id: 'more_info', text: 'もう少し詳しく' },
             { id: 'other_concerns', text: '他の悩みも' }
         ]);
     }
     
     showPriceOffer() {
-        this.addMessage('今なら、初回特別価格1,980円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
-        
+        this.addMessage('今なら、初回特別価格2,640円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
+
         setTimeout(() => {
             this.showOptions([
-                { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true }
+                { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true }
             ]);
         }, 1500);
     }
     
     resetToInitialOptions() {
         this.showOptions([
-            { id: 'odor', text: 'ニオイ・ムレが気になる' },
-            { id: 'discomfort', text: '生理中の不快感' },
-            { id: 'dryness', text: 'かゆみ・乾燥' }
+            { id: 'coverage', text: 'シミ・毛穴が隠れない' },
+            { id: 'texture', text: '厚塗り感・ツヤのなさ' },
+            { id: 'lasting', text: '夕方のメイク崩れ' }
         ]);
     }
     
@@ -362,7 +362,7 @@ class LuzlimChatbot {
                 const linkContent = document.createElement('div');
                 linkContent.className = 'message-content';
                 const linkButton = document.createElement('a');
-                linkButton.href = 'https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform';
+                linkButton.href = 'https://www.shinnihonseiyaku.co.jp/lp/promotion/cosme/2375b_19/';
                 linkButton.target = '_blank';
                 linkButton.rel = 'noopener noreferrer';
                 linkButton.style.cssText = `
@@ -404,8 +404,8 @@ class LuzlimChatbot {
     }
     
     redirectToPurchase() {
-        const lpUrl = 'https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform';
-        
+        const lpUrl = 'https://www.shinnihonseiyaku.co.jp/lp/promotion/cosme/2375b_19/';
+
         // ポップアップブロッカー対策として複数の方法を試行
         try {
             const newWindow = window.open(lpUrl, '_blank', 'noopener,noreferrer');
@@ -423,9 +423,9 @@ class LuzlimChatbot {
         switch (choiceId) {
             case 'more_info':
                 setTimeout(() => {
-                    this.addMessage('LuzLimの詳細をご説明しますね！📋');
+                    this.addMessage('パーフェクトワンの詳細をご説明しますね！📋');
                     setTimeout(() => {
-                        this.addMessage('✅ 累計18万人の実績から誕生\n✅ 抗菌・消臭のW処方\n✅ 定期回数のお約束なし');
+                        this.addMessage('✅ 9年連続売上日本一のブランド発\n✅ カバー力とツヤ感を両立\n✅ 定期回数のお約束なし');
                         setTimeout(() => {
                             this.addMessage('安心してお試しいただけます！');
                             setTimeout(() => {
@@ -440,7 +440,7 @@ class LuzlimChatbot {
                 setTimeout(() => {
                     this.addMessage('他にもお悩みがあるのですね😊');
                     setTimeout(() => {
-                        this.addMessage('LuzLimは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
+                        this.addMessage('パーフェクトワンは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
                         setTimeout(() => {
                             this.resetToInitialOptions();
                         }, 1000);
@@ -699,7 +699,7 @@ class InteractiveFeatures {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const chatbot = new LuzlimChatbot();
+    const chatbot = new PerfectOneChatbot();
 
     // パーティクルシステム削除（パフォーマンス改善のため）
     // new ParticleSystem();
@@ -818,7 +818,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 購入ページへのリダイレクト関数
     function redirectToPurchasePage() {
-        const purchaseUrl = 'https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform';
+        const purchaseUrl = 'https://www.shinnihonseiyaku.co.jp/lp/promotion/cosme/2375b_19/';
         window.open(purchaseUrl, '_blank');
     }
 
