@@ -255,20 +255,26 @@ class PerfectOneChatbot {
             case 'coverage':
                 this.addMessage('シミ・毛穴が隠れないお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('パーフェクトワンなら高いカバー力で、気になる部分を厚塗り感なく自然に隠せますよ！✨');
+                    this.addMessage('パーフェクトワンなら高いカバー力で気になる部分をカバー✨');
                     setTimeout(() => {
-                        this.showSpecialOffer();
-                    }, 1200);
+                        this.addMessage('厚塗り感なく自然に隠せますよ！');
+                        setTimeout(() => {
+                            this.showSpecialOffer();
+                        }, 1000);
+                    }, 800);
                 }, 1000);
                 return;
 
             case 'texture':
                 this.addMessage('厚塗り感・ツヤのなさにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('美容液級のうるおいで、内側から輝くような理想のツヤ肌が手に入ります！👍');
+                    this.addMessage('美容液級のうるおいで内側から輝くように👍');
                     setTimeout(() => {
-                        this.showSpecialOffer();
-                    }, 1200);
+                        this.addMessage('理想のツヤ肌が手に入ります！');
+                        setTimeout(() => {
+                            this.showSpecialOffer();
+                        }, 1000);
+                    }, 800);
                 }, 1000);
                 return;
 
@@ -333,13 +339,16 @@ class PerfectOneChatbot {
     }
     
     showPriceOffer() {
-        this.addMessage('今なら、初回特別価格2,640円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
+        this.addMessage('今なら初回特別価格2,640円（税込・送料無料）！');
 
         setTimeout(() => {
-            this.showOptions([
-                { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true }
-            ]);
-        }, 1500);
+            this.addMessage('定期回数のお約束なしでお試しいただけます✨');
+            setTimeout(() => {
+                this.showOptions([
+                    { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true }
+                ]);
+            }, 1000);
+        }, 1000);
     }
     
     resetToInitialOptions() {
@@ -440,10 +449,13 @@ class PerfectOneChatbot {
                 setTimeout(() => {
                     this.addMessage('他にもお悩みがあるのですね😊');
                     setTimeout(() => {
-                        this.addMessage('パーフェクトワンは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
+                        this.addMessage('パーフェクトワンは複数のお悩みに同時にアプローチできます！');
                         setTimeout(() => {
-                            this.resetToInitialOptions();
-                        }, 1000);
+                            this.addMessage('どちらが一番気になりますか？');
+                            setTimeout(() => {
+                                this.resetToInitialOptions();
+                            }, 800);
+                        }, 800);
                     }, 1000);
                 }, 300);
                 break;
