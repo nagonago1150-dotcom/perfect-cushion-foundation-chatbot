@@ -59,24 +59,23 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
     color: #5a4037;
-    background: 
+    background:
         radial-gradient(circle at 20% 80%, rgba(255, 240, 235, 0.6) 0%, transparent 50%),
         radial-gradient(circle at 80% 20%, rgba(250, 235, 225, 0.5) 0%, transparent 50%),
         radial-gradient(circle at 40% 40%, rgba(248, 230, 220, 0.4) 0%, transparent 50%),
         radial-gradient(circle at 70% 70%, rgba(252, 245, 240, 0.3) 0%, transparent 50%),
-        linear-gradient(135deg, 
-            rgba(255, 252, 248, 0.95) 0%, 
-            rgba(254, 249, 243, 0.9) 25%, 
-            rgba(253, 246, 238, 0.85) 50%, 
-            rgba(252, 243, 233, 0.9) 75%, 
+        linear-gradient(135deg,
+            rgba(255, 252, 248, 0.95) 0%,
+            rgba(254, 249, 243, 0.9) 25%,
+            rgba(253, 246, 238, 0.85) 50%,
+            rgba(252, 243, 233, 0.9) 75%,
             rgba(250, 240, 228, 0.95) 100%);
     background-attachment: fixed;
     /* パフォーマンス最適化 */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /* スムーズスクロール */
-    scroll-behavior: smooth;
+    /* スムーズスクロールはJavaScriptで制御（scroll-behavior削除） */
     overflow-x: hidden;
     position: relative;
 }
@@ -106,7 +105,7 @@ body {
     border: 12px solid rgba(255, 255, 255, 0.9);
     background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.3) 70%);
     animation: rippleExpand 10s ease-out infinite;
-    box-shadow: 
+    box-shadow:
         0 0 80px rgba(255, 255, 255, 0.8),
         inset 0 0 60px rgba(255, 255, 255, 0.7);
 }
@@ -197,15 +196,15 @@ body {
     position: absolute;
     width: 30px;
     height: 30px;
-    background: radial-gradient(circle at 30% 30%, 
-        rgba(255, 255, 255, 1) 0%, 
-        rgba(255, 255, 255, 0.9) 30%, 
-        rgba(255, 255, 255, 0.7) 70%, 
+    background: radial-gradient(circle at 30% 30%,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 0.9) 30%,
+        rgba(255, 255, 255, 0.7) 70%,
         rgba(255, 255, 255, 0.4) 100%);
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.8);
     animation: dropletFloat 8s ease-in-out infinite;
-    box-shadow: 
+    box-shadow:
         0 10px 20px rgba(255, 255, 255, 0.8),
         0 0 40px rgba(255, 255, 255, 0.7),
         inset 0 6px 12px rgba(255, 255, 255, 1),
@@ -330,16 +329,16 @@ body {
 .bubble {
     position: absolute;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, 
-        rgba(255, 255, 255, 0.3) 0%, 
-        rgba(255, 255, 255, 0.1) 40%, 
-        rgba(255, 255, 255, 0.05) 70%, 
+    background: radial-gradient(circle at 30% 30%,
+        rgba(255, 255, 255, 0.3) 0%,
+        rgba(255, 255, 255, 0.1) 40%,
+        rgba(255, 255, 255, 0.05) 70%,
         transparent 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 
+    box-shadow:
         0 0 10px rgba(255, 255, 255, 0.1),
         inset 0 0 10px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(1px);
+    /* パフォーマンス改善のためbackdrop-filterを削除 */
     animation: bubbleFloat 15s ease-in-out infinite;
 }
 
@@ -539,16 +538,17 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: 
+    background:
         radial-gradient(circle at 30% 20%, rgba(255, 245, 238, 0.8) 0%, transparent 60%),
         radial-gradient(circle at 70% 80%, rgba(252, 240, 230, 0.7) 0%, transparent 60%),
         radial-gradient(circle at 50% 50%, rgba(248, 235, 225, 0.6) 0%, transparent 70%),
-        linear-gradient(135deg, 
-            rgba(255, 250, 245, 0.85) 0%, 
-            rgba(253, 247, 240, 0.8) 25%, 
-            rgba(251, 244, 235, 0.75) 50%, 
-            rgba(249, 241, 230, 0.8) 75%, 
+        linear-gradient(135deg,
+            rgba(255, 250, 245, 0.85) 0%,
+            rgba(253, 247, 240, 0.8) 25%,
+            rgba(251, 244, 235, 0.75) 50%,
+            rgba(249, 241, 230, 0.8) 75%,
             rgba(247, 238, 225, 0.85) 100%);
+    background-attachment: fixed;
     padding: clamp(20px, 4vh, 40px) 0;
     box-sizing: border-box;
     z-index: 1;
@@ -2408,28 +2408,88 @@ main {
 }
 
 #chatbot-trigger {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 65px;
-    height: 65px;
-    background: linear-gradient(145deg, #DAA520 0%, #B8860B 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(139, 82, 52, 0.2);
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    width: 65px !important;
+    height: 65px !important;
+    background: linear-gradient(145deg, #DAA520 0%, #B8860B 100%) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 26px !important;
+    cursor: pointer !important;
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4) !important;
+    z-index: 999999 !important;
+    transition: all 0.3s ease !important;
+    border: 2px solid rgba(139, 82, 52, 0.2) !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    animation: chatbotRollIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+}
+
+/* アイコンが転がって登場 */
+@keyframes chatbotRollIn {
+    0% {
+        transform: translateX(200px) translateY(200px) rotate(0deg);
+        opacity: 0;
+    }
+    60% {
+        transform: translateX(0) translateY(0) rotate(360deg);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(-15px) rotate(360deg);
+    }
+    85% {
+        transform: translateY(5px) rotate(360deg);
+    }
+    95% {
+        transform: translateY(-5px) rotate(360deg);
+    }
+    100% {
+        transform: translateY(0) rotate(360deg);
+        opacity: 1;
+    }
 }
 
 #chatbot-trigger:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(218, 165, 32, 0.6);
     background: linear-gradient(145deg, #FFD700 0%, #DAA520 100%);
+}
+
+/* チャットボットアイコン画像 */
+.chatbot-trigger-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform 0.4s ease, filter 0.3s ease;
+    animation: iconBreathing 3s ease-in-out infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* アイコンに微妙な呼吸エフェクト */
+@keyframes iconBreathing {
+    0%, 100% {
+        filter: brightness(1) saturate(1);
+    }
+    50% {
+        filter: brightness(1.1) saturate(1.15);
+    }
+}
+
+/* ホバー時にアイコンを回転 */
+#chatbot-trigger:hover .chatbot-trigger-icon {
+    transform: translate(-50%, -50%) rotate(15deg) scale(1.05);
+    filter: brightness(1.2) saturate(1.3);
 }
 
 #chatbot-container {
@@ -4833,17 +4893,189 @@ img:hover {
 
 /* Chatbot Trigger Pulse */
 #chatbot-trigger {
-    animation: triggerPulse 2s ease-in-out infinite;
+    animation: triggerPulseBounce 2.5s ease-in-out infinite;
+    position: relative;
 }
 
-@keyframes triggerPulse {
+/* Enhanced pulse ring effect */
+#chatbot-trigger::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(218, 165, 32, 0.4) 0%, transparent 70%);
+    animation: pulseRing 2.5s ease-out infinite;
+    z-index: -1;
+}
+
+@keyframes triggerPulseBounce {
     0%, 100% {
-        transform: scale(1);
-        box-shadow: 0 4px 15px rgba(26, 188, 156, 0.3);
+        transform: scale(1) translateY(0);
+        box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+    }
+    25% {
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 8px 25px rgba(218, 165, 32, 0.5);
     }
     50% {
-        transform: scale(1.1);
-        box-shadow: 0 6px 25px rgba(26, 188, 156, 0.5);
+        transform: scale(1.1) translateY(-5px);
+        box-shadow: 0 10px 30px rgba(218, 165, 32, 0.6), 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+    75% {
+        transform: scale(1.05) translateY(-3px);
+        box-shadow: 0 8px 25px rgba(218, 165, 32, 0.5);
+    }
+}
+
+@keyframes pulseRing {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+    }
+    100% {
+        width: 180%;
+        height: 180%;
+        opacity: 0;
+    }
+}
+
+/* Chatbot Callout Bubble */
+.chatbot-callout {
+    position: absolute !important;
+    bottom: 70px !important;
+    right: 30px !important;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+    color: #5a4037;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        0 2px 8px rgba(0, 0, 0, 0.05),
+        0 0 15px rgba(218, 165, 32, 0.2);
+    animation: calloutBounce 2.5s ease-in-out infinite, calloutShine 3s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1000000 !important;
+    border: 2px solid rgba(218, 165, 32, 0.3);
+    overflow: hidden;
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+}
+
+/* キラキラエフェクト */
+.chatbot-callout::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.5) 50%,
+        transparent 70%
+    );
+    animation: calloutGlimmer 3s ease-in-out infinite;
+}
+
+.chatbot-callout::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #f8f8f8;
+    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes calloutBounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+@keyframes calloutFade {
+    0%, 40%, 100% {
+        opacity: 1;
+    }
+    45%, 95% {
+        opacity: 0;
+    }
+}
+
+/* キラキラ光るエフェクト */
+@keyframes calloutGlimmer {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* 輝きエフェクト */
+@keyframes calloutShine {
+    0%, 100% {
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.1),
+            0 2px 8px rgba(0, 0, 0, 0.05),
+            0 0 15px rgba(218, 165, 32, 0.2);
+    }
+    50% {
+        box-shadow:
+            0 4px 15px rgba(0, 0, 0, 0.1),
+            0 2px 8px rgba(0, 0, 0, 0.05),
+            0 0 25px rgba(218, 165, 32, 0.4),
+            0 0 35px rgba(255, 215, 0, 0.3);
+    }
+}
+
+/* ふわっとフェードイン */
+@keyframes calloutFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ふわっとフェードアウト */
+@keyframes calloutFadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.9);
+    }
+}
+
+/* Show callout on all devices with adjusted size for mobile */
+@media (max-width: 768px) {
+    .chatbot-callout {
+        display: block !important;
+        font-size: 12px !important;
+        padding: 8px 14px !important;
+        bottom: 70px !important;
     }
 }
 
@@ -4898,18 +5130,31 @@ img:hover {
     #sticky-cta {
         bottom: 10px;
     }
-    
+
     .sticky-cta-button {
         padding: 14px 28px;
         font-size: 14px;
     }
-    
+
     #scroll-progress-bar {
         height: 3px;
     }
+
+    /* モバイルでアニメーション要素を削減してパフォーマンス改善 */
+    .ripple,
+    .droplet,
+    .bubble {
+        animation-duration: 20s !important;
+    }
+
+    /* モバイルではパララックス効果を無効化 */
+    .hero-header,
+    .botanical-frame {
+        transform: none !important;
+    }
 }
 
-/* Reduce motion for accessibility */
+/* Reduce motion for accessibility and performance */
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -4918,4 +5163,311 @@ img:hover {
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+
+    /* 重いアニメーションを完全に無効化 */
+    .ripple,
+    .droplet,
+    .bubble,
+    .moisture-overlay {
+        animation: none !important;
+        opacity: 0.3 !important;
+    }
+}
+
+/* ========================================
+   Enhanced Hero Section Animations
+   ======================================== */
+
+/* Enhanced Brand Title Animation - より目立つ効果 */
+@keyframes brandTitleEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+        filter: blur(10px);
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Subtitle Animation - 文字がスライドして現れる */
+@keyframes subtitleSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* Feature Badge Pop Animation - バッジが順番にポップアップ */
+@keyframes featureBadgePop {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(20px) rotate(-5deg);
+    }
+    50% {
+        transform: scale(1.1) translateY(-5px) rotate(2deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0) rotate(0deg);
+    }
+}
+
+/* Floating Animation - バッジの軽い浮遊効果 */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+/* Pulse Glow - 注目を集める光の効果 */
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow:
+            0 6px 20px rgba(52, 152, 219, 0.25),
+            0 2px 8px rgba(52, 152, 219, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow:
+            0 8px 30px rgba(52, 152, 219, 0.45),
+            0 4px 15px rgba(52, 152, 219, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.5),
+            0 0 20px rgba(52, 152, 219, 0.3);
+    }
+}
+
+/* Apply Enhanced Animations */
+.hero-header h1 {
+    animation: brandTitleEntrance 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards !important;
+}
+
+.hero-header .subtitle {
+    animation: subtitleSlideIn 1s ease-out 0.4s backwards !important;
+}
+
+/* Feature badges with staggered animation */
+.feature-badge-large {
+    animation:
+        featureBadgePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) backwards,
+        gentleFloat 3s ease-in-out 1.5s infinite,
+        pulseGlow 2s ease-in-out 1.5s infinite;
+}
+
+.feature-badge-large:nth-child(1) {
+    animation-delay: 0.6s, 1.5s, 1.5s;
+}
+
+.feature-badge-large:nth-child(2) {
+    animation-delay: 0.8s, 1.7s, 1.7s;
+}
+
+.feature-badge-large:nth-child(3) {
+    animation-delay: 1s, 1.9s, 1.9s;
+}
+
+/* Hover effect enhancement for badges */
+.feature-badge-large:hover {
+    animation-play-state: paused;
+    transform: translateY(-5px) scale(1.05) !important;
+    box-shadow:
+        0 12px 35px rgba(52, 152, 219, 0.4),
+        0 6px 18px rgba(52, 152, 219, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        0 0 25px rgba(52, 152, 219, 0.4) !important;
+}
+
+/* Accessibility: Disable animations on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-header h1,
+    .hero-header .subtitle,
+    .feature-badge-large {
+        animation: none !important;
+    }
+}
+
+/* ========================================
+   Scroll-Triggered Animations
+   ======================================== */
+
+/* Fade In from Bottom */
+@keyframes fadeInUpScroll {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade In with Scale (Zoom In) */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Stagger animation for list items */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Image zoom effect */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hide elements initially for scroll trigger */
+.scroll-trigger {
+    opacity: 0;
+}
+
+/* Apply animations when elements are visible */
+.scroll-trigger.visible {
+    animation: fadeInUpScroll 0.8s ease-out forwards;
+}
+
+/* Images with scroll trigger */
+.concern-image,
+.solution-image,
+.subscription-offer-image {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.concern-image.visible,
+.solution-image.visible,
+.subscription-offer-image.visible {
+    opacity: 1;
+    animation: zoomIn 0.8s ease-out forwards;
+}
+
+/* List items stagger effect */
+.benefit-item,
+.concern-item,
+.solution-item {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.benefit-item.visible,
+.concern-item.visible,
+.solution-item.visible {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+/* Stagger delay for list items */
+.benefit-item.visible:nth-child(1),
+.concern-item.visible:nth-child(1),
+.solution-item.visible:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.benefit-item.visible:nth-child(2),
+.concern-item.visible:nth-child(2),
+.solution-item.visible:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.benefit-item.visible:nth-child(3),
+.concern-item.visible:nth-child(3),
+.solution-item.visible:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.benefit-item.visible:nth-child(4),
+.concern-item.visible:nth-child(4),
+.solution-item.visible:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Section titles */
+.features h3,
+.benefits-section h3,
+.cta-section h3 {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.features h3.visible,
+.benefits-section h3.visible,
+.cta-section h3.visible {
+    animation: fadeInUpScroll 0.8s ease-out forwards;
+}
+
+/* Evidence grid items */
+.evidence-item {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.evidence-item.visible {
+    animation: fadeInScale 0.7s ease-out forwards;
+}
+
+.evidence-item.visible:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.evidence-item.visible:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+/* Transform arrow animation */
+.transform-arrow {
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.transform-arrow.visible {
+    animation: fadeInScale 0.8s ease-out forwards;
+}
+
+/* Arrow bounce on visible */
+@keyframes arrowBounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+}
+
+.transform-arrow.visible svg {
+    animation: arrowBounce 1.5s ease-in-out infinite 0.8s;
 }

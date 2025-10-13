@@ -1,4 +1,4 @@
-class PerfectOneChatbot {
+class LuzlimChatbot {
     constructor() {
         this.chatContainer = document.getElementById('chatbot-container');
         this.chatTrigger = document.getElementById('chatbot-trigger');
@@ -216,16 +216,16 @@ class PerfectOneChatbot {
         if (this.messagesContainer.children.length > 0) {
             return;
         }
-
-        this.addMessage('こんにちは！パーフェクトワン 美容アドバイザーです😊');
-
+        
+        this.addMessage('こんにちは！LuzLimサポートです😊');
+        
         setTimeout(() => {
             this.addMessage('どのようなお悩みでお困りですか？');
             setTimeout(() => {
                 this.showOptions([
-                    { id: 'coverage', text: 'シミ・毛穴が隠れない' },
-                    { id: 'finish', text: '厚塗り感・ツヤのなさ' },
-                    { id: 'longevity', text: '夕方のメイク崩れ' }
+                    { id: 'odor', text: 'ニオイ・ムレが気になる' },
+                    { id: 'discomfort', text: '生理中の不快感' },
+                    { id: 'dryness', text: 'かゆみ・乾燥' }
                 ]);
             }, 800);
         }, 1000);
@@ -252,30 +252,30 @@ class PerfectOneChatbot {
         this.updateProgress();
 
         switch (choiceId) {
-            case 'coverage':
-                this.addMessage('シミ・毛穴にお悩みなんですね。');
+            case 'odor':
+                this.addMessage('ニオイ・ムレにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションなら、高いカバー力(※)で厚塗り感なく、自然に隠せますよ！✨\n\n※メイクアップ効果による');
+                    this.addMessage('LuzLimのW処方が原因菌をブロックして、夕まで気にならない清潔な状態を保ちますよ！✨');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
 
-            case 'finish':
-                this.addMessage('仕上がりにお悩みなんですね。');
+            case 'discomfort':
+                this.addMessage('生理中の不快感にお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションなら、美容液級のうるおいで、内側から輝くような理想のツヤ肌(※)が手に入ります！👍\n\n※メイクアップ効果による');
+                    this.addMessage('LuzLimなら濃密な泡でやさしく洗えるので、敏感な時期も快適に過ごせます！👍');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
 
-            case 'longevity':
-                this.addMessage('メイク崩れにお悩みなんですね。');
+            case 'dryness':
+                this.addMessage('かゆみ・乾燥にお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションは肌への密着力が高いので、夕方までキレイな仕上がり(※)が続きます！🌸\n\n※メイクアップ効果による');
+                    this.addMessage('LuzLimはうるおいを守りながら洗えるので、乾燥しがちなデリケートゾーンにぴったりです！🌸');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
@@ -304,7 +304,7 @@ class PerfectOneChatbot {
                 imageContent.className = 'message-content';
                 const img = document.createElement('img');
                 img.src = 'luzlim-chat-promo.png';
-                img.alt = 'パーフェクトワン グロウ＆カバー クッションファンデーション 初回特別価格2,640円';
+                img.alt = 'LuzLim定期便特別価格1,980円';
                 img.style.width = '100%';
                 img.style.borderRadius = '8px';
                 img.style.cursor = 'pointer';
@@ -315,7 +315,7 @@ class PerfectOneChatbot {
                 this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
                 
                 setTimeout(() => {
-                    this.addMessage('初回特別価格、2,640円でお試しできます！💰');
+                    this.addMessage('初回特別価格、1,980円でお試しできます！💰');
                     setTimeout(() => {
                         this.showFinalOptions();
                     }, 1200);
@@ -326,35 +326,35 @@ class PerfectOneChatbot {
     
     showFinalOptions() {
         this.showOptions([
-            { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true },
+            { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true },
             { id: 'more_info', text: 'もう少し詳しく' },
             { id: 'other_concerns', text: '他の悩みも' }
         ]);
     }
     
     showPriceOffer() {
-        this.addMessage('今なら、初回特別価格2,640円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
-
+        this.addMessage('今なら、初回特別価格1,980円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
+        
         setTimeout(() => {
             this.showOptions([
-                { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true }
+                { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true }
             ]);
         }, 1500);
     }
     
     resetToInitialOptions() {
         this.showOptions([
-            { id: 'coverage', text: 'シミ・毛穴が隠れない' },
-            { id: 'finish', text: '厚塗り感・ツヤのなさ' },
-            { id: 'longevity', text: '夕方のメイク崩れ' }
+            { id: 'odor', text: 'ニオイ・ムレが気になる' },
+            { id: 'discomfort', text: '生理中の不快感' },
+            { id: 'dryness', text: 'かゆみ・乾燥' }
         ]);
     }
     
     handlePurchaseAction() {
         setTimeout(() => {
-            this.addMessage('ありがとうございます！🎉');
+            this.addMessage('素晴らしい判断ですね！🎉');
             setTimeout(() => {
-                this.addMessage('お得なキャンペーンページにご案内いたします...');
+                this.addMessage('お得な定期コースページにご案内いたします...');
                 
                 // 購入ページへのリンクボタンも表示
                 const linkDiv = document.createElement('div');
@@ -423,9 +423,9 @@ class PerfectOneChatbot {
         switch (choiceId) {
             case 'more_info':
                 setTimeout(() => {
-                    this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションの詳細をご説明しますね！📋');
+                    this.addMessage('LuzLimの詳細をご説明しますね！📋');
                     setTimeout(() => {
-                        this.addMessage('✅ 9年連続売上日本一※のブランド発\n✅ カバー力と理想のツヤ感を両立(※)\n✅ 定期回数のお約束なし\n\n※パーフェクトワン オールインワン美容液ジェルシリーズとして\n※メイクアップ効果による');
+                        this.addMessage('✅ 累計18万人の実績から誕生\n✅ 抗菌・消臭のW処方\n✅ 定期回数のお約束なし');
                         setTimeout(() => {
                             this.addMessage('安心してお試しいただけます！');
                             setTimeout(() => {
@@ -435,12 +435,12 @@ class PerfectOneChatbot {
                     }, 1000);
                 }, 300);
                 break;
-
+                
             case 'other_concerns':
                 setTimeout(() => {
                     this.addMessage('他にもお悩みがあるのですね😊');
                     setTimeout(() => {
-                        this.addMessage('パーフェクトワン グロウ＆カバー クッションファンデーションは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
+                        this.addMessage('LuzLimは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
                         setTimeout(() => {
                             this.resetToInitialOptions();
                         }, 1000);
@@ -488,7 +488,9 @@ class ParticleSystem {
     }
     
     createParticles() {
-        for (let i = 0; i < 50; i++) {
+        // パーティクル数を50から20に削減してパフォーマンス改善
+        const particleCount = window.innerWidth < 768 ? 10 : 20;
+        for (let i = 0; i < particleCount; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
@@ -697,10 +699,10 @@ class InteractiveFeatures {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const chatbot = new PerfectOneChatbot();
+    const chatbot = new LuzlimChatbot();
 
-    // パーティクルシステム初期化
-    new ParticleSystem();
+    // パーティクルシステム削除（パフォーマンス改善のため）
+    // new ParticleSystem();
 
     // スクロールアニメーション初期化
     new ScrollAnimations();
@@ -708,43 +710,61 @@ document.addEventListener('DOMContentLoaded', function() {
     // インタラクティブ機能初期化
     new InteractiveFeatures();
 
-    // スクロール進捗バー
-    window.addEventListener('scroll', () => {
-        const scrollProgress = document.getElementById('scroll-progress-bar');
-        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const progress = (scrollTop / scrollHeight) * 100;
-        scrollProgress.style.width = progress + '%';
-    });
-
-    // スティッキーCTAボタン
+    // 要素をキャッシュ（DOM検索を1回だけ実行）
+    const scrollProgress = document.getElementById('scroll-progress-bar');
     const stickyCta = document.getElementById('sticky-cta');
     const ctaSection = document.querySelector('.cta-section');
+    const heroHeader = document.querySelector('.hero-header');
 
-    window.addEventListener('scroll', () => {
-        const heroHeight = document.querySelector('.hero-header').offsetHeight;
-        const ctaSectionTop = ctaSection.offsetTop;
-        const ctaSectionBottom = ctaSectionTop + ctaSection.offsetHeight;
-        const scrollPosition = window.scrollY + window.innerHeight;
+    // オフセットを事前計算
+    let heroHeight = heroHeader ? heroHeader.offsetHeight : 0;
+    let ctaSectionTop = ctaSection ? ctaSection.offsetTop : 0;
 
-        if (window.scrollY > heroHeight && scrollPosition < ctaSectionTop) {
-            stickyCta.classList.remove('sticky-cta-hidden');
-            stickyCta.classList.add('sticky-cta-visible');
-        } else {
-            stickyCta.classList.remove('sticky-cta-visible');
-            stickyCta.classList.add('sticky-cta-hidden');
+    // リサイズ時にオフセットを再計算
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            heroHeight = heroHeader ? heroHeader.offsetHeight : 0;
+            ctaSectionTop = ctaSection ? ctaSection.offsetTop : 0;
+        }, 250);
+    });
+
+    // シンプルなスクロールハンドラー（パララックス削除）
+    let ticking = false;
+
+    function updateScrollEffects() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+        // スクロール進捗バー
+        if (scrollProgress) {
+            const progress = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = progress + '%';
         }
-    });
 
-    // パララックス効果
+        // スティッキーCTAボタン
+        if (stickyCta && ctaSection) {
+            const scrollPosition = scrollTop + window.innerHeight;
+            if (scrollTop > heroHeight && scrollPosition < ctaSectionTop) {
+                stickyCta.classList.remove('sticky-cta-hidden');
+                stickyCta.classList.add('sticky-cta-visible');
+            } else {
+                stickyCta.classList.remove('sticky-cta-visible');
+                stickyCta.classList.add('sticky-cta-hidden');
+            }
+        }
+
+        ticking = false;
+    }
+
+    // スクロールイベント（throttle処理）
     window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.hero-header, .botanical-frame');
-        parallaxElements.forEach(el => {
-            const speed = 0.5;
-            el.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-    });
+        if (!ticking) {
+            requestAnimationFrame(updateScrollEffects);
+            ticking = true;
+        }
+    }, { passive: true });
 
     // カウントアップアニメーション
     const countUpElements = document.querySelectorAll('.count-up');
@@ -839,4 +859,125 @@ document.addEventListener('DOMContentLoaded', function() {
         badge.style.cursor = 'pointer';
         badge.addEventListener('click', redirectToPurchasePage);
     });
+
+    // Price Countup Animation
+    const priceMain = document.querySelector('.price-main');
+    if (priceMain && priceMain.hasAttribute('data-price')) {
+        const priceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+                    const targetPrice = parseInt(entry.target.getAttribute('data-price'));
+                    const duration = 1500;
+                    const start = performance.now();
+
+                    const animate = (currentTime) => {
+                        const elapsed = currentTime - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+                        const currentValue = Math.floor(easeOutQuart * targetPrice);
+
+                        entry.target.textContent = currentValue.toLocaleString('ja-JP') + '円';
+
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            entry.target.textContent = targetPrice.toLocaleString('ja-JP') + '円';
+                            entry.target.classList.add('counted');
+                        }
+                    };
+
+                    requestAnimationFrame(animate);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        priceObserver.observe(priceMain);
+    }
+
+    // Scroll-Triggered Animations with Intersection Observer
+    const scrollObserverOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, scrollObserverOptions);
+
+    // Observe all elements that need scroll-triggered animations
+    const animateOnScroll = [
+        '.concern-image',
+        '.solution-image',
+        '.subscription-offer-image',
+        '.benefit-item',
+        '.concern-item',
+        '.solution-item',
+        '.features h3',
+        '.benefits-section h3',
+        '.cta-section h3',
+        '.evidence-item',
+        '.transform-arrow'
+    ];
+
+    animateOnScroll.forEach(selector => {
+        document.querySelectorAll(selector).forEach(el => {
+            scrollObserver.observe(el);
+        });
+    });
+
+    // チャットボット吹き出しのセリフローテーション
+    new ChatbotCalloutManager();
 });
+
+// チャットボット吹き出しのセリフローテーション管理
+class ChatbotCalloutManager {
+    constructor() {
+        this.calloutElement = document.querySelector('.chatbot-callout');
+        this.messages = [
+            '相談してください！',
+            'お悩み解決します✨',
+            '気軽にどうぞ♪',
+            '無料で診断できます',
+            'まずはチャットで相談',
+            '今なら特別価格！'
+        ];
+        this.currentIndex = 0;
+        this.interval = 4000; // 4秒ごとに切り替え
+        this.fadeOutDuration = 500;
+        this.fadeInDuration = 500;
+
+        if (this.calloutElement) {
+            this.start();
+        }
+    }
+
+    start() {
+        // 初期表示後、定期的にセリフを切り替え
+        setTimeout(() => {
+            this.rotateMessage();
+        }, 3000); // 最初は3秒後に開始
+    }
+
+    rotateMessage() {
+        // フェードアウト
+        this.calloutElement.style.animation = 'calloutFadeOut 0.5s ease-out forwards';
+
+        setTimeout(() => {
+            // セリフを変更
+            this.currentIndex = (this.currentIndex + 1) % this.messages.length;
+            this.calloutElement.textContent = this.messages[this.currentIndex];
+
+            // フェードイン
+            this.calloutElement.style.animation = 'calloutFadeIn 0.5s ease-in forwards, calloutBounce 2.5s ease-in-out infinite, calloutShine 3s ease-in-out infinite';
+
+            // 次のローテーション
+            setTimeout(() => {
+                this.rotateMessage();
+            }, this.interval);
+        }, this.fadeOutDuration);
+    }
+}
