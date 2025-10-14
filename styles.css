@@ -708,6 +708,11 @@ main {
     font-size: 0.28em;
 }
 
+/* 極小※マーク用（さらに小さく） */
+.small-note.super-small {
+    font-size: 0.14em;
+}
+
 /* 注釈文を小さく表示（※すべてメイクアップ効果による） */
 .small-note.note-text {
     font-size: 0.5em;
