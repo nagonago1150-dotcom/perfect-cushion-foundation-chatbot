@@ -696,9 +696,9 @@ main {
 /* 注釈マークと説明文を小さく表示 */
 .small-note {
     font-size: 0.55em;
-    color: #999;
-    font-weight: 300;
-    opacity: 0.7;
+    color: #666;
+    font-weight: 400;
+    opacity: 1;
     line-height: 1.2;
     vertical-align: super;
 }
