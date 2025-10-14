@@ -55,6 +55,11 @@
     box-sizing: border-box;
 }
 
+/* Prevent line breaks within this element */
+.no-break {
+    white-space: nowrap;
+}
+
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
