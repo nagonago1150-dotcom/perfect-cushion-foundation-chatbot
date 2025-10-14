@@ -1758,10 +1758,15 @@ main {
     font-weight: 500;
     font-size: 1.05rem;
     letter-spacing: 0.3px;
-    text-shadow: 
+    text-shadow:
         0 2px 4px rgba(139, 82, 52, 0.15),
         0 0 15px rgba(240, 240, 240, 0.1);
     /* Removed transparent text fill for better readability */
+}
+
+.benefit-item .small-note {
+    font-size: 0.5rem;
+    vertical-align: super;
     line-height: 1.4;
     word-break: keep-all;
     overflow-wrap: break-word;
@@ -3734,7 +3739,11 @@ body {
     .benefit-item span:last-child {
         font-size: 0.9rem;
     }
-    
+
+    .benefit-item .small-note {
+        font-size: 0.45rem;
+    }
+
     .benefit-icon {
         width: 24px;
         height: 24px;
@@ -4041,7 +4050,11 @@ body {
         word-break: keep-all;
         overflow-wrap: break-word;
     }
-    
+
+    .benefit-item .small-note {
+        font-size: 0.47rem;
+    }
+
     .benefit-icon {
         width: 28px;
         height: 28px;
