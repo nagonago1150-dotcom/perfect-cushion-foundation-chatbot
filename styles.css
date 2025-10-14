@@ -1789,6 +1789,10 @@ main {
 }
 
 .benefit-item .small-note.super-small {
+    font-size: 0.6rem;
+}
+
+.benefit-item .small-note.note-text {
     font-size: 0.2rem;
 }
 
@@ -3098,6 +3102,10 @@ body {
 }
 
 .solution-item .small-note.super-small {
+    font-size: 0.6rem;
+}
+
+.solution-item .small-note.note-text {
     font-size: 0.2rem;
 }
 
