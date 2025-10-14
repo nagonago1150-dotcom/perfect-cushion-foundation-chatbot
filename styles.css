@@ -695,10 +695,10 @@ main {
 
 /* 注釈マークと説明文を小さく表示 */
 .small-note {
-    font-size: 0.5em;
-    color: #666;
-    font-weight: 400;
-    opacity: 0.8;
+    font-size: 0.35em;
+    color: #999;
+    font-weight: 300;
+    opacity: 0.6;
     line-height: 1.2;
 }
 
@@ -1790,11 +1790,12 @@ main {
 }
 
 .benefit-note {
-    font-size: 0.9rem;
-    color: #6d4c41;
+    font-size: 0.7rem;
+    color: #999;
     font-style: italic;
     margin-top: 1.5rem;
     padding: 1rem;
+    opacity: 0.7;
     line-height: 1.6;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -3171,11 +3172,12 @@ body {
 }
 
 .evidence-note {
-    font-size: 0.9rem;
-    color: #8d6e63;
+    font-size: 0.7rem;
+    color: #999;
     font-style: italic;
     margin-top: 1.5rem;
     padding-top: 1rem;
+    opacity: 0.7;
     border-top: 1px solid rgba(218, 165, 32, 0.2);
 }
 
@@ -3747,10 +3749,11 @@ body {
     }
     
     .benefit-note {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
         margin-top: 0.5rem;
         padding-top: 0.5rem;
         margin-bottom: 0;
+        opacity: 0.7;
     }
     
     .doctor-stat-visual .counter-number {
@@ -4060,11 +4063,12 @@ body {
     }
     
     .benefit-note {
-        font-size: 0.85rem;
+        font-size: 0.68rem;
         margin-top: 0.5rem;
         padding-top: 0.5rem;
         margin-bottom: 0;
         text-align: center;
+        opacity: 0.7;
     }
 }
 
@@ -4099,11 +4103,12 @@ body {
 /* PC版専用：医師推奨の長いテキスト表示改善 */
 @media (min-width: 769px) {
     .feature-info .benefit-note {
-        font-size: 0.75rem;
+        font-size: 0.6rem;
         line-height: 1.4;
         max-width: none;
         white-space: normal;
         word-wrap: break-word;
+        opacity: 0.7;
         overflow-wrap: break-word;
         padding: 0.8rem;
         text-align: left;
@@ -4129,7 +4134,8 @@ body {
         width: 100%;
         box-sizing: border-box;
         text-align: left;
-        font-size: 0.72rem;
+        font-size: 0.58rem;
+        opacity: 0.7;
         padding: 1rem;
         margin: 1rem 0;
     }
