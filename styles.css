@@ -1793,7 +1793,7 @@ main {
 }
 
 .benefit-item .small-note.note-text {
-    font-size: 0.2rem;
+    font-size: 0.4rem;
 }
 
 @keyframes textSubtleGlow {
@@ -3106,7 +3106,7 @@ body {
 }
 
 .solution-item .small-note.note-text {
-    font-size: 0.2rem;
+    font-size: 0.4rem;
 }
 
 /* 科学的根拠セクション */
