@@ -690,10 +690,11 @@ main {
 
 /* 注釈マークと説明文を小さく表示 */
 .small-note {
-    font-size: 0.65em;
-    color: #8b7355;
-    font-weight: 400;
-    opacity: 0.7;
+    font-size: 0.5em;
+    color: #999;
+    font-weight: 300;
+    opacity: 0.5;
+    line-height: 1.2;
 }
 
 .hero-header .subtitle {
@@ -2602,6 +2603,10 @@ main {
     border-radius: 18px;
     max-width: 80%;
     word-wrap: break-word;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    line-height: 1.6;
 }
 
 .message.bot .message-content {
@@ -2643,6 +2648,11 @@ main {
     text-align: center;
     font-weight: 500;
     box-shadow: 0 2px 8px rgba(139, 82, 52, 0.03);
+    word-wrap: break-word;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
 }
 
 .option-button:hover {
@@ -2664,6 +2674,12 @@ main {
     padding: 20px 28px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    word-wrap: break-word;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
+    min-height: 60px;
 }
 
 .cta-option:hover {
@@ -3932,16 +3948,20 @@ body {
         padding: 14px 16px;
         font-size: 14px;
         margin-bottom: 8px;
-        line-height: 1.4;
+        line-height: 1.5;
         word-wrap: break-word;
+        word-break: keep-all;
+        overflow-wrap: break-word;
         white-space: normal;
+        min-height: 48px;
     }
 
     .message-content {
         max-width: 85%;
         font-size: 14px;
         padding: 10px 14px;
-        line-height: 1.5;
+        line-height: 1.6;
+        word-break: keep-all;
     }
 
     .cta-option {
@@ -4167,16 +4187,20 @@ body {
         padding: 12px 14px;
         font-size: 13px;
         margin-bottom: 6px;
-        line-height: 1.3;
+        line-height: 1.5;
         word-wrap: break-word;
+        word-break: keep-all;
+        overflow-wrap: break-word;
         white-space: normal;
+        min-height: 44px;
     }
 
     .message-content {
         max-width: 88%;
         font-size: 13px;
         padding: 9px 12px;
-        line-height: 1.4;
+        line-height: 1.6;
+        word-break: keep-all;
     }
 
     .cta-option {
@@ -4584,10 +4608,28 @@ body {
         font-size: 14px;
         padding: 12px 15px;
     }
-    
+
     .kalcala-badge span {
         writing-mode: horizontal-tb !important;
         text-orientation: mixed !important;
+    }
+
+    .option-button {
+        font-size: 12px;
+        padding: 10px 12px;
+        min-height: 42px;
+        line-height: 1.4;
+    }
+
+    .message-content {
+        font-size: 12px;
+        padding: 8px 10px;
+        max-width: 90%;
+    }
+
+    .cta-option {
+        font-size: 13px !important;
+        padding: 12px 16px !important;
     }
 }
 
