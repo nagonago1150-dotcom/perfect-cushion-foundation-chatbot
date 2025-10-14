@@ -710,7 +710,7 @@ main {
 
 /* 極小※マーク用（さらに小さく） */
 .small-note.super-small {
-    font-size: 0.14em;
+    font-size: 0.5em;
 }
 
 /* 注釈文を小さく表示（※すべてメイクアップ効果による） */
