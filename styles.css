@@ -3128,6 +3128,10 @@ body {
     font-weight: 600;
 }
 
+.scientific-evidence h4 .small-note.half-size {
+    font-size: 1rem;
+}
+
 .evidence-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
