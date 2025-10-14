@@ -1788,6 +1788,10 @@ main {
     overflow-wrap: break-word;
 }
 
+.benefit-item .small-note.super-small {
+    font-size: 0.2rem;
+}
+
 @keyframes textSubtleGlow {
     0%, 100% { 
         background-position: 0% 50%;
