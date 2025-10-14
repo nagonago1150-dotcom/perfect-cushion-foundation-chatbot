@@ -703,6 +703,16 @@ main {
     vertical-align: super;
 }
 
+/* さらに小さい※マーク用（特定箇所のみ） */
+.small-note.extra-small {
+    font-size: 0.28em;
+}
+
+/* 注釈文を小さく表示（※すべてメイクアップ効果による） */
+.small-note.note-text {
+    font-size: 0.5em;
+}
+
 .hero-header .subtitle {
     font-size: 1.1rem;
     color: #6d4c41;
