@@ -715,7 +715,7 @@ main {
 
 /* 注釈文を小さく表示（※すべてメイクアップ効果による） */
 .small-note.note-text {
-    font-size: 0.5em;
+    font-size: 0.25em;
 }
 
 .hero-header .subtitle {
@@ -3095,6 +3095,10 @@ body {
 .solution-item:hover span:last-child {
     color: #4a2c1a;
     text-shadow: 0 2px 4px rgba(139, 82, 52, 0.15);
+}
+
+.solution-item .small-note.super-small {
+    font-size: 0.2rem;
 }
 
 /* 科学的根拠セクション */
