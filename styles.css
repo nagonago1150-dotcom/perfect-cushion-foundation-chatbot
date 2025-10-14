@@ -695,11 +695,12 @@ main {
 
 /* 注釈マークと説明文を小さく表示 */
 .small-note {
-    font-size: 0.35em;
+    font-size: 0.55em;
     color: #999;
     font-weight: 300;
-    opacity: 0.6;
+    opacity: 0.7;
     line-height: 1.2;
+    vertical-align: super;
 }
 
 .hero-header .subtitle {
@@ -1765,7 +1766,7 @@ main {
 }
 
 .benefit-item .small-note {
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     vertical-align: super;
     line-height: 1.4;
     word-break: keep-all;
@@ -3741,7 +3742,7 @@ body {
     }
 
     .benefit-item .small-note {
-        font-size: 0.45rem;
+        font-size: 0.38rem;
     }
 
     .benefit-icon {
@@ -4052,7 +4053,7 @@ body {
     }
 
     .benefit-item .small-note {
-        font-size: 0.47rem;
+        font-size: 0.4rem;
     }
 
     .benefit-icon {
