@@ -5756,3 +5756,106 @@ img:hover {
         padding: 10px 6px;
     }
 }
+
+/* 全端末対応のレイアウト調整 */
+@media (max-width: 1200px) {
+    .hero-header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-header h1 {
+        font-size: 2rem;
+    }
+    
+    .feature-badge-large {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem;
+        line-height: 1.5;
+    }
+    
+    .feature-badge-large {
+        font-size: 0.9rem;
+        padding: 10px 14px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.4rem;
+        line-height: 1.6;
+    }
+    
+    .feature-badge-large {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 0.85rem;
+        line-height: 1.8;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+        line-height: 1.7;
+    }
+}
+
+/* タブレット横向き対応 */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .hero-header {
+        min-height: 500px;
+    }
+    
+    .hero-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* 小型タブレット対応 */
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero-header h1 {
+        font-size: 1.7rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+}
