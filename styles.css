@@ -5623,3 +5623,61 @@ img:hover {
 .transform-arrow.visible svg {
     animation: arrowBounce 1.5s ease-in-out infinite 0.8s;
 }
+
+/* 視認性向上のための追加スタイル */
+.small-note {
+    color: #555 !important;
+    font-weight: 500 !important;
+}
+
+.hero-header .subtitle {
+    font-size: 1.2rem !important;
+    color: #5d3c31 !important;
+    font-weight: 700 !important;
+}
+
+.feature-badge-large {
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+}
+
+.hero h2 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #4a2c1f !important;
+}
+
+.hero p {
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+}
+
+.features h3 {
+    font-size: 1.8rem !important;
+    font-weight: 700 !important;
+    color: #4a2c1f !important;
+}
+
+.product-above-button,
+.product-hero-image {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .hero-header .subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .hero h2 {
+        font-size: 1.6rem !important;
+    }
+    
+    .product-above-button {
+        max-width: 250px !important;
+    }
+    
+    .product-hero-image {
+        max-width: 300px !important;
+    }
+}
