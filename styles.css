@@ -5681,3 +5681,78 @@ img:hover {
         max-width: 300px !important;
     }
 }
+
+/* 特別案内のスタイル改善 */
+.special-notice {
+    background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+    padding: 20px !important;
+    border-radius: 12px;
+    border: 2px solid #d32f2f;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+    text-align: center;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 12px rgba(211, 47, 47, 0.2);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 6px 16px rgba(211, 47, 47, 0.3);
+    }
+}
+
+/* チャットボットのレスポンシブ改善 */
+@media (max-width: 768px) {
+    #chatbot-container {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+    
+    #chatbot-messages {
+        max-height: calc(100vh - 200px);
+    }
+    
+    .special-notice {
+        font-size: 0.9rem !important;
+        padding: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .special-notice {
+        font-size: 0.85rem !important;
+        padding: 12px !important;
+    }
+    
+    .hero-consultation-btn {
+        font-size: 1rem;
+        padding: 14px 28px;
+    }
+}
+
+/* タブボタンのレスポンシブ改善 */
+@media (max-width: 768px) {
+    .tab-buttons {
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .tab-button {
+        flex: 1;
+        font-size: 0.9rem;
+        padding: 12px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        font-size: 0.85rem;
+        padding: 10px 6px;
+    }
+}
