@@ -5878,3 +5878,25 @@ img:hover {
         margin: 15px auto !important;
     }
 }
+
+/* スマホ版h2タイトルのフォントサイズ調整 */
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.1rem !important;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h2 {
+        font-size: 1.05rem !important;
+        line-height: 1.75;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero h2 {
+        font-size: 1rem !important;
+        line-height: 1.8;
+    }
+}
