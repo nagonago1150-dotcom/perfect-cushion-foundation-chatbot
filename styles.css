@@ -5859,3 +5859,22 @@ img:hover {
         font-size: 1.5rem;
     }
 }
+
+/* サブタイトル下の商品画像スタイル */
+.product-below-subtitle {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .product-below-subtitle {
+        max-width: 250px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-below-subtitle {
+        max-width: 200px !important;
+        margin: 15px auto !important;
+    }
+}
