@@ -2701,9 +2701,9 @@ main {
 }
 
 .cta-option {
-    background: linear-gradient(145deg, #8B0000 0%, #DC143C 100%) !important;
-    border-color: #DAA520 !important;
-    color: #2c1810 !important;
+    background: linear-gradient(145deg, #DAA520 0%, #FFD700 50%, #DAA520 100%) !important;
+    border-color: #8B4513 !important;
+    color: #FFFFFF !important;
     font-weight: 600;
     font-size: 18px;
     padding: 20px 28px;
@@ -2718,9 +2718,9 @@ main {
 }
 
 .cta-option:hover {
-    background: linear-gradient(145deg, #DC143C 0%, #8B0000 100%) !important;
-    border-color: #FFD700 !important;
-    box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4) !important;
+    background: linear-gradient(145deg, #FFD700 0%, #DAA520 100%) !important;
+    border-color: #654321 !important;
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4) !important;
 }
 
 .small-text {

@@ -438,7 +438,10 @@ class PerfectOneChatbot {
                         setTimeout(() => {
                             this.addMessage('安心してお試しいただけます！');
                             setTimeout(() => {
-                                this.showFinalOptions();
+                                this.showOptions([
+                                    { id: 'purchase', text: '今すぐ2,640円で試す！', isCTA: true },
+                                    { id: 'other_concerns', text: '他の悩みも' }
+                                ]);
                             }, 1000);
                         }, 1500);
                     }, 1000);
