@@ -958,7 +958,6 @@ class ChatbotCalloutManager {
             '気軽にどうぞ♪',
             '無料で診断できます',
             'まずはチャットで相談',
-            '今なら特別価格！'
         ];
         this.currentIndex = 0;
         this.interval = 4000; // 4秒ごとに切り替え
