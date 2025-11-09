@@ -224,7 +224,7 @@ class PerfectOneChatbot {
             setTimeout(() => {
                 this.showOptions([
                     { id: 'coverage', text: 'シミ・毛穴が隠れない' },
-                    { id: 'texture', text: '厚塗り感・ツヤのなさ' },
+                    { id: 'texture', text: '厚塗り感・ツヤ※のなさ' },
                     { id: 'lasting', text: '夕方のメイク崩れ' }
                 ]);
             }, 800);
@@ -266,11 +266,12 @@ class PerfectOneChatbot {
                 return;
 
             case 'texture':
-                this.addMessage('厚塗り感・ツヤのなさにお悩みなんですね。');
+                this.addMessage('厚塗り感・ツヤ※のなさにお悩みなんですね。');
                 setTimeout(() => {
                     this.addMessage('65種の保湿成分配合で上品なツヤ肌を実現👍');
                     setTimeout(() => {
-                        this.addMessage('理想のツヤ肌が手に入ります！');
+                        this.addMessage('理想のツヤ肌※が手に入ります！');
+                        this.addMessage('※メイクアップ効果による');
                         setTimeout(() => {
                             this.showSpecialOffer();
                         }, 1000);
@@ -354,7 +355,7 @@ class PerfectOneChatbot {
     resetToInitialOptions() {
         this.showOptions([
             { id: 'coverage', text: 'シミ・毛穴が隠れない' },
-            { id: 'texture', text: '厚塗り感・ツヤのなさ' },
+            { id: 'texture', text: '厚塗り感・ツヤ※のなさ' },
             { id: 'lasting', text: '夕方のメイク崩れ' }
         ]);
     }
@@ -434,7 +435,8 @@ class PerfectOneChatbot {
                 setTimeout(() => {
                     this.addMessage('パーフェクトワンの詳細をご説明しますね！📋');
                     setTimeout(() => {
-                        this.addMessage('✅ 9年連続国内売上No.1のブランド発\n✅ カバー力とツヤ感を両立\n✅ 定期回数のお約束なし');
+                        this.addMessage('✅ ９年連続オールインワンジェルシリーズ国内売上日本一ブランド\n✅ カバー力とツヤ感※を両立\n✅ 定期回数のお約束なし');
+                        this.addMessage('※メイクアップ効果による');
                         setTimeout(() => {
                             this.addMessage('安心してお試しいただけます！');
                             setTimeout(() => {
