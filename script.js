@@ -944,54 +944,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // チャットボット吹き出しのセリフローテーション
-    new ChatbotCalloutManager();
 });
 
-// チャットボット吹き出しのセリフローテーション管理
-class ChatbotCalloutManager {
-    constructor() {
-        this.calloutElement = document.querySelector('.chatbot-callout');
-        this.messages = [
-            '相談してください！',
-            'お悩み解決します✨',
-            '気軽にどうぞ♪',
-            '無料で診断できます',
-            'まずはチャットで相談',
-        ];
-        this.currentIndex = 0;
-        this.interval = 4000; // 4秒ごとに切り替え
-        this.fadeOutDuration = 500;
-        this.fadeInDuration = 500;
-
-        if (this.calloutElement) {
-            this.start();
-        }
-    }
-
-    start() {
-        // 初期表示後、定期的にセリフを切り替え
-        setTimeout(() => {
-            this.rotateMessage();
-        }, 3000); // 最初は3秒後に開始
-    }
-
-    rotateMessage() {
-        // フェードアウト
-        this.calloutElement.style.animation = 'calloutFadeOut 0.5s ease-out forwards';
-
-        setTimeout(() => {
-            // セリフを変更
-            this.currentIndex = (this.currentIndex + 1) % this.messages.length;
-            this.calloutElement.textContent = this.messages[this.currentIndex];
-
-            // フェードイン
-            this.calloutElement.style.animation = 'calloutFadeIn 0.5s ease-in forwards, calloutBounce 2.5s ease-in-out infinite, calloutShine 3s ease-in-out infinite';
-
-            // 次のローテーション
-            setTimeout(() => {
-                this.rotateMessage();
-            }, this.interval);
-        }, this.fadeOutDuration);
-    }
-}
