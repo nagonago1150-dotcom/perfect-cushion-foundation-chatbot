@@ -2012,6 +2012,30 @@ main {
     50% { background-position: 100% 50%; }
 }
 
+.special-announcement {
+    margin: 2rem 0 1.5rem 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.special-announcement p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #d32f2f;
+    line-height: 1.6;
+    margin: 0;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(145deg,
+        rgba(255, 235, 238, 0.9),
+        rgba(255, 245, 245, 0.8));
+    border: 2px solid rgba(211, 47, 47, 0.3);
+    border-radius: 15px;
+    box-shadow:
+        0 4px 15px rgba(211, 47, 47, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
 .price {
     margin: 3.5rem 0;
     position: relative;
@@ -3882,7 +3906,18 @@ body {
         margin-bottom: 1.5rem;
         line-height: 1.2;
     }
-    
+
+    .special-announcement {
+        margin: 1.5rem 0 1rem 0;
+    }
+
+    .special-announcement p {
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+        border-radius: 12px;
+        line-height: 1.5;
+    }
+
     .price {
         margin: 2rem 0;
         padding: 2rem 1.5rem;
